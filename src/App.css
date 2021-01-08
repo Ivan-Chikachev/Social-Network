@@ -1,38 +1,319 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:focus,
+:active {
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  background-color: #ebebeb;
+  font-family: Raleway;
+}
+
+.btn {
   color: white;
+  background-color: #4d7198;
+  border-radius: 3px;
+  padding: 10px 25px;
+  display: inline-block;
+  vertical-align: top;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #315b88;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  max-width: 993px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 1005px) {
+  .container {
+    max-width: 750px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 550px;
   }
+}
+@media (max-width: 480px) {
+  .container {
+    max-width: 550px;
+    padding: 0 10px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #4d7198;
+  margin: 0 0 10px 0;
+  height: 55px;
+  position: fixed;
+  width: 100%;
+}
+.header__logo img {
+  width: 40px;
+  margin: 8px 0 0;
+}
+
+.mainblock {
+  margin: 70px 0 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.content__nav {
+  width: 17%;
+  margin: 0 10px 0 0;
+}
+.content__nav li {
+  padding: 8px 8px;
+  border-radius: 5px;
+}
+.content__nav li:hover {
+  background-color: #d3d3e2;
+}
+.content__nav li a {
+  padding: 15px 10px 0 0;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: black;
+}
+.content__nav li a.active {
+  font-weight: 600;
+}
+.content__page {
+  width: 83%;
+}
+
+.profile {
+  display: flex;
+}
+.profile__avatar {
+  width: 250px;
+  max-height: 300px;
+}
+.profile__avatar img {
+  width: 250px;
+}
+.profile__about {
+  margin: 0 0 0 15px;
+}
+.profile__about h4 {
+  font-weight: 700;
+}
+
+.myposts {
+  margin: 15px 0 0;
+}
+.myposts__newpost {
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fafafa;
+  min-height: 100px;
+}
+.myposts__newpost .btn {
+  float: right;
+}
+.myposts__newpost input {
+  padding: 8px;
+  background-color: #fafafa;
+  margin: 0 0 10px;
+  width: 100%;
+  min-height: 20px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.mypost {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 15px 0 0;
+}
+.mypost__link {
+  margin: 0 0 15px;
+  display: flex;
+}
+
+.link {
+  background-color: #fafafa;
+  border-radius: 5px;
+  padding: 10px;
+}
+.link__avatar {
+  margin: 0 10px 0 0;
+}
+.link__avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.link__post h5 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+.link__post p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.massanger {
+  display: flex;
+}
+.massanger__dialogs {
+  width: 30%;
+}
+.massanger__massages {
+  width: 70%;
+}
+
+.dialogs {
+  border-right: 1px solid lightgray;
+  margin: 0 10px;
+  min-height: 500px;
+}
+.dialogs__item {
+  margin: 0 5px 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.dialogs__item:hover {
+  background-color: #d3d3e2;
+}
+.dialogs__item a {
+  padding: 10px 5px 10px 0;
+  color: black;
+}
+.dialogs__item a.active {
+  font-weight: 600;
+}
+.dialogs__item a span {
+  display: inline-block;
+  margin: 10px 10px;
+}
+.dialogs__item img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.massages__addmassage {
+  margin: 0 0 15px;
+  height: 90px;
+}
+.massages__addmassage input {
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  height: 50px;
+  margin: 0 0 8px;
+}
+.massages__addmassage .btn {
+  float: right;
+}
+.massages__item {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 15px;
+  background-color: white;
+  margin: 0 0 30px;
+  border-radius: 8px;
 }
