@@ -1,31 +1,35 @@
 let initialState = {
-  massages: [{ id: 1, massage: "Hi, i am cat)" }],
+  massages: [{ id: 1, massage: "Hi, i am cat)" }, { id: 1, massage: "Hi, i am cat)" }],
   newMassageText: "",
 };
 
+const SEND_MASSAGE = 'SEND_MASSAGE';
+const ADD_MASSAGE = 'ADD_MASSAGE';
+
 const massangerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SEND MASSAGE":
-      state.newMassageText = action.newText;
-      return state;
-    case "ADD-MASSAGE":
+    case SEND_MASSAGE:
+      return { ...state, newMassageText: action.newText };
+    case ADD_MASSAGE:
       let newMassage = {
         id: 2,
         massage: state.newMassageText,
       };
-      state.massages.push(newMassage);
-      state.newMassageText = "";
-      return state;
+      return {
+        ...state,
+        massages: [...state.massages, newMassage],
+        newMassageText: "",
+      };
 
     default:
-     return state;
+      return state;
   }
 };
 
-export const updateMassageTextCreator = (text) => ({
-  type: "SEND-MASSAGE",
+export const updateMassageText = (text) => ({
+  type: SEND_MASSAGE,
   newText: text,
 });
-export const addMassageCreator = () => ({ type: "ADD-MASSAGE" });
+export const addMassage = () => ({ type: ADD_MASSAGE });
 
 export default massangerReducer;

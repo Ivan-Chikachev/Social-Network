@@ -1,9 +1,26 @@
 import './App.css';
+import React from "react";
+import Navbar from './components/Navbar/Navbar';
+import { Route } from 'react-router-dom';
+import Massanger from './components/Massanger/Massanger';
+import UsersContainer from './components/Users/UsersContainer';
+import PageContainer from './components/Page/PageContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
-function App(props) {
+const App = () => {
   return (
     <div className="wrapper">
-      <div>Hello, world!</div>
+      <HeaderContainer />
+      <div className="mainblock">
+        <div className="container">
+          <div className="content">
+            <Navbar />
+            <Route path="/profile/:userId?" render={() => <PageContainer />}/>
+            <Route path="/massanger" render={() => <Massanger />}/>
+            <Route path="/users" render={() => <UsersContainer />}/>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

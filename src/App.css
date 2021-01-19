@@ -89,7 +89,7 @@ h6 {
 
 body {
   background-color: #ebebeb;
-  font-family: Raleway;
+  font-family: Montserrat;
 }
 
 .btn {
@@ -152,6 +152,18 @@ body {
   width: 40px;
   margin: 8px 0 0;
 }
+.header__login {
+  margin: 5px 10px 0 0;
+}
+.header__login a {
+  color: black;
+}
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .mainblock {
   margin: 70px 0 0;
@@ -189,8 +201,8 @@ body {
   display: flex;
 }
 .profile__avatar {
-  width: 250px;
-  max-height: 300px;
+  min-width: 150px;
+  min-height: 300px;
 }
 .profile__avatar img {
   width: 250px;
@@ -200,6 +212,20 @@ body {
 }
 .profile__about h4 {
   font-weight: 700;
+}
+
+.about__status-user {
+  margin: 10px 0 30px;
+}
+.about__contacts {
+  margin: 15px 0 0;
+}
+
+.contacts__name {
+  margin: 0 10px 0;
+  font-weight: 600;
+  width: 110px;
+  display: inline-block;
 }
 
 .myposts {
@@ -316,4 +342,77 @@ body {
   background-color: white;
   margin: 0 0 30px;
   border-radius: 8px;
+}
+
+.users {
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 80px;
+}
+.users__btn-follow {
+  margin: 0 10px 0;
+}
+.users__btn-follow .btn {
+  width: 140px;
+}
+
+.about-user {
+  display: flex;
+  justify-content: start;
+}
+.about-user__img {
+  margin: 0 0 0 15px;
+}
+.about-user__img img {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.about-user__name {
+  border-right: 1px solid #b8b8b8;
+  padding: 5px 0 0 10px;
+  margin: 0 20px 0 15px;
+}
+.about-user__name a {
+  width: 150px;
+  margin: 0 0 10px 0;
+  color: black;
+  font-weight: 600;
+}
+.about-user__name p {
+  width: 150px;
+  margin: 10px 0 0;
+  color: #535353;
+}
+.about-user__status {
+  margin: 5px 0 0;
+}
+
+.selectedPage {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.page-selector {
+  margin: 3px;
+  line-height: 1.8;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+}
+.page-selector:hover {
+  color: #494961;
+}
+
+.loader {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 23%;
 }

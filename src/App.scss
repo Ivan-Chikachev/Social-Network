@@ -1,0 +1,369 @@
+@import "style0.scss";
+body {
+  background-color: rgb(235, 235, 235);
+  font-family: Montserrat;
+}
+// ------ МИКСИНЫ -----//
+
+@mixin anim($time, $delay) {
+  transition: all $time ease $delay;
+}
+
+// ------ ПЕРЕМЕННЫЕ -----//
+
+$minwidth: 320px;
+$mw: 993;
+$md1: $mw + 12;
+$md2: 768;
+$md3: 480;
+
+// ------ КНОПКИ -----//
+
+.btn {
+  color: rgb(255, 255, 255);
+  background-color: #4d7198;
+  border-radius: 3px;
+  padding: 10px 25px;
+  display: inline-block;
+  vertical-align: top;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background-color: #315b88;
+  }
+}
+
+// ------ ОБОЛОЧКА -----//
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+// ------ СЕТКА -----//
+
+.container {
+  max-width: $mw + px;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 550px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: 550px;
+    padding: 0 10px;
+  }
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+// ----Header----
+.header {
+  background-color: #4d7198;
+  margin: 0 0 10px 0;
+  height: 55px;
+  position: fixed;
+  width: 100%;
+  &__logo {
+    img {
+      width: 40px;
+      margin: 8px 0 0;
+    }
+  }
+  &__login {
+    margin: 5px 10px 0 0;
+    a {
+      color: black;
+    }
+  }
+}
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+// ----Mainblock-----
+.mainblock {
+  margin: 70px 0 0;
+}
+// ----Nav-----
+.content {
+  display: flex;
+  justify-content: space-between;
+  &__nav {
+    width: 17%;
+    margin: 0 10px 0 0;
+    li {
+      padding: 8px 8px;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgb(211, 211, 226);
+      }
+
+      a {
+
+        padding: 15px 10px 0 0;
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        color: black;
+        &.active {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__page {
+    width: 83%;
+  }
+}
+
+// -----MyProfile----
+
+.profile {
+  display: flex;
+  &__avatar {
+    min-width: 150px;
+    min-height: 300px;
+
+    img {
+      width: 250px;
+    }
+  }
+
+  &__about {
+    margin: 0 0 0 15px;
+    h4 {
+      font-weight: 700;
+    }
+  }
+}
+.about {
+  &__status-user {
+    margin: 10px 0 30px;
+  }
+  &__contacts {
+    margin: 15px 0 0;
+  }
+}
+.contacts {
+  &__name {
+    margin: 0 10px 0;
+    font-weight: 600;
+    width: 110px;
+    display: inline-block;
+  }
+}
+// ----Posts-----
+.myposts {
+  margin: 15px 0 0;
+  &__newpost {
+    border-radius: 5px;
+    padding: 15px;
+    background-color: rgb(250, 250, 250);
+    min-height: 100px;
+
+    .btn {
+      float: right;
+    }
+    input {
+      padding: 8px;
+      background-color: rgb(250, 250, 250);
+      margin: 0 0 10px;
+      width: 100%;
+      min-height: 20px;
+      border-bottom: 1px solid rgb(228, 228, 228);
+    }
+  }
+}
+.mypost {
+  display: flex;
+  flex-direction: column-reverse;
+  
+  margin: 15px 0 0;
+  &__link {
+    margin: 0 0 15px;
+    display: flex;
+  }
+}
+.link {
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  padding: 10px;
+
+  &__avatar {
+    margin: 0 10px 0 0;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  &__post {
+    h5 {
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}
+
+////----Massage-----
+.massanger {
+  display: flex;
+  &__dialogs {
+    width: 30%;
+  }
+
+  &__massages {
+    width: 70%;
+  }
+}
+
+.dialogs {
+  border-right: 1px solid rgb(211, 211, 211);
+  margin: 0 10px;
+  min-height: 500px;
+  &__item {
+    margin: 0 5px 10px;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgb(211, 211, 226);
+    }
+    a {
+      padding: 10px 5px 10px 0;
+      color: black;
+      &.active {
+        font-weight: 600;
+      }
+      span {
+        display: inline-block;
+        margin: 10px 10px;
+      }
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+
+.massages {
+  
+  &__addmassage {
+    margin: 0 0 15px;
+    height: 90px;
+    input {
+      border-radius: 8px;
+      padding: 8px;
+      width: 100%;
+      height: 50px;
+      margin: 0 0 8px;
+    }
+    .btn {
+      float: right;
+    }
+  }
+  &__item {
+    
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px;
+    background-color: white;
+    margin: 0 0 30px;
+    border-radius: 8px;
+  }
+}
+//-------Users-------//
+
+.users {
+
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 80px;
+  &__about-user {
+    
+  }
+
+  &__btn-follow {
+    .btn{
+      width: 140px;
+    }
+    margin: 0 10px 0;
+  }
+  
+}
+.about-user {
+  display: flex;
+  justify-content: start;
+  &__img {
+    margin: 0 0 0 15px;
+    img {
+      object-fit:cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  &__name {
+    border-right: 1px solid rgb(184, 184, 184);
+    padding: 5px 0 0 10px;
+    margin: 0 20px 0 15px;
+    a {
+      width: 150px;
+      margin: 0 0 10px 0;
+      color: black;
+      font-weight: 600;
+    }
+    p {
+      width: 150px;
+      margin: 10px 0 0;
+      color: rgb(83, 83, 83);
+    }
+  }
+  &__status {
+    margin: 5px 0 0;
+  }
+}
+.selectedPage {
+  font-weight: 600;
+  font-size: 16px;
+  
+}
+.page-selector {
+  margin: 3px;
+  line-height: 1.8;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  &:hover {
+    color:rgb(73, 73, 97);
+  }
+}
+.loader {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 23%;
+}
+
