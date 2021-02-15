@@ -1,6 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 const Header = (props) => {
+    const loginName =
+        <div><span>{props.login}</span>
+            <span
+                onClick={props.logout}
+                className={'header__logout'}>Выйти
+            </span>
+        </div>;
+
   return (
     <header className='header'>
       <div className='container'>
@@ -12,7 +20,7 @@ const Header = (props) => {
             />
           </div>
           <div className='header__login'>
-            {props.isAuth ? <span>{props.login}</span> : <NavLink to=''>Войти</NavLink>}
+            {props.isAuth ? loginName : <NavLink to='/login'>Войти</NavLink>}
             
           </div>
        </div>

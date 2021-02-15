@@ -1,37 +1,43 @@
 import React from "react";
 import MyPost from "./MyPost";
+import {Field, reduxForm} from "redux-form";
 
-const postsContainer = (props) => {
-  let newPostText = React.createRef();
-  let addPost = () => {
-    props.addPostCreator();
-  };
-
-  let onPostChange = () => {
-    let text = newPostText.current.value;
-
-    props.updateNewPostText(text);
-  };
+const Posts = (props) => {
 
   let post = props.posts.map((p) => <MyPost name={p.Name} text={p.text} />);
 
+ const addNewPost = (values) => {
+     props.addPost(values.newPost)
+ }
   return (
     <div className="page__myposts myposts">
       <div className="myposts__newpost">
-        <input
-          ref={newPostText}
-          value={props.newPostText}
-          onChange={onPostChange}
-          type="text"
-          placeholder="Что нового?.."
-        />
-        <button onClick={addPost} className="btn">
-          Поделиться
-        </button>
+        <NewPostReduxForm onSubmit = {addNewPost}/>
       </div>
       <div className="myposts__mypost mypost">{post}</div>
     </div>
   );
 };
 
-export default postsContainer;
+const PostForm = (props) => {
+
+  return(
+      <form onSubmit={props.handleSubmit}>
+        <Field
+            component={'input'}
+            name={'newPost'}
+            placeholder={"Что нового?.."}
+        />
+        <button className="btn">
+          Поделиться
+        </button>
+      </form>
+  )
+}
+const NewPostReduxForm = reduxForm({form: 'newPost'})(PostForm)
+
+export default Posts;
+
+
+
+

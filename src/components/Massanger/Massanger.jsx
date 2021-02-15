@@ -1,8 +1,7 @@
 import React from "react";
+import DialogsContainer from "./Dialogs/DialogsContainer";
 
-import DialogsContainer from "./DialogsContainer";
-
-const massanger = () => {
+const Massanger = () => {
   
   return (
     <div className= "content__page">
@@ -10,4 +9,4 @@ const massanger = () => {
     </div>
   );
 };
-export default massanger; 
+export default Massanger;

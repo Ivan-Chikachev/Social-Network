@@ -6,7 +6,9 @@ const page = (props) => {
 
     return (
       <div className="content__page page">
-        <Profile profile={props.profile}/>
+        <Profile profile={props.profile}
+                 status={props.status}
+                 updateStatus={props.updateStatus}/>
         <PostsContainer />
       </div>
     );
